@@ -8,7 +8,7 @@
    Written by:
    Slava Zanko <slavazanko@gmail.com>, 2009, 2010, 2011, 2013
    Vitaliy Filippov <vitalif@yourcmc.ru>, 2011
-   Andrew Borodin <aborodin@vmail.ru>, 2013
+   Andrew Borodin <aborodin@vmail.ru>, 2013, 2014
 
    This file is part of the Midnight Commander.
 
@@ -556,7 +556,7 @@ mc_search_regex__process_append_str (GString * dest_str, const char *from, gsize
     if (len == (gsize) (-1))
         len = strlen (from);
 
-    if ((*replace_flags == REPLACE_T_NO_TRANSFORM) != 0)
+    if (*replace_flags == REPLACE_T_NO_TRANSFORM)
     {
         g_string_append_len (dest_str, from, len);
         return;
